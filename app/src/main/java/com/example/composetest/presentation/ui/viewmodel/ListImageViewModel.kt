@@ -11,8 +11,8 @@ class ListImageViewModel(
     private val loadListImageUseCase: LoadListImageUseCase
 ) : ViewModel() {
 
-    var counter = mutableStateOf<List<ImageResponse>>(listOf())
-    private val _counter = mutableListOf<ImageResponse>()
+    var listImage = mutableStateOf<List<ImageResponse>>(listOf())
+    private val _listImage = mutableListOf<ImageResponse>()
 
     fun getAllImage() {
         loadListImageUseCase.apply {
@@ -20,9 +20,9 @@ class ListImageViewModel(
                 loadListImageUseCase.getListImage()
                     .onSuccess { listImageResponse ->
                         listImageResponse.data.forEach {
-                            _counter.add(it)
+                            _listImage.add(it)
                         }
-                        counter.value = _counter
+                        listImage.value = _listImage
                     }
                     .onFailure {
                         Log.e("mistake:", it.toString())

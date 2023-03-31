@@ -16,7 +16,7 @@ fun AllImage(homeViewModel: ListImageViewModel, onClick: (id: String) -> Unit) {
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Fixed(2)
     ) {
-        items(homeViewModel.counter.value) { plant ->
+        items(homeViewModel.listImage.value) { plant ->
             PlantCard(plant.id, plant.images.original.url ?: "", onClick)
         }
     }

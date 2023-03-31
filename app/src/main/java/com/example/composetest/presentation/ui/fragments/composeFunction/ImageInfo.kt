@@ -9,7 +9,7 @@ import com.example.composetest.presentation.ui.viewmodel.*
 
 @Composable
 fun Image(id: String, viewModel: ListImageViewModel) {
-    viewModel.counter.value.forEach {
+    viewModel.listImage.value.forEach {
         if (id == it.id) {
             Column(
                 modifier = Modifier
