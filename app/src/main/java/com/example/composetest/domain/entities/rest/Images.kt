@@ -1,6 +1,9 @@
 package com.example.composetest.domain.entities.rest
 
+import com.google.gson.annotations.SerializedName
+
 data class Images(
-    val downsized_still: DownsizedStill,
+    @SerializedName("downsized_still")
+    val downsizedStill: DownsizedStill,
     val original: Original
 )

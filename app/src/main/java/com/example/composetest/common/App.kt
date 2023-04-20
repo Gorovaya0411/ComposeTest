@@ -7,7 +7,6 @@ import com.example.composetest.di.modules.*
 class App : Application() {
     lateinit var listImagesComponent: ListImagesComponent
 
-
     override fun onCreate() {
         super.onCreate()
         listImagesComponent = DaggerListImagesComponent

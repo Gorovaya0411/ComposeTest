@@ -113,6 +113,7 @@ dependencies {
     implementation(Dependencies.Compose.viewModel)
     implementation(Dependencies.Compose.runtime)
     implementation(Dependencies.Compose.navigation)
+    implementation(Dependencies.Compose.foundation)
     implementation(Dependencies.Compose.coil)
     implementation(Dependencies.Compose.coilGif)
     implementation(Dependencies.Compose.staggeredManager)

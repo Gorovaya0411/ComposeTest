@@ -1,10 +1,6 @@
 object Dependencies {
 
-
-    object Kotlin {
-
-
-    }
+    object Kotlin
 
     object Dagger {
         const val version = "2.43.2"
@@ -43,8 +39,9 @@ object Dependencies {
     }
 
     object Okhttp {
-        const val okhttp = "com.squareup.okhttp3:okhttp:4.10.0"
-        const val interceptor = "com.squareup.okhttp3:logging-interceptor:4.10.0"
+        private const val version = "4.10.0"
+        const val okhttp = "com.squareup.okhttp3:okhttp:$version"
+        const val interceptor = "com.squareup.okhttp3:logging-interceptor:$version"
     }
 
     object Glide {
@@ -58,7 +55,7 @@ object Dependencies {
 
 
     object Test {
-        const val jUnit = "junit:junit:4.+"
+        const val jUnit = "junit:junit:4.13.2"
         const val androidJUnit = "androidx.test.ext:junit:1.1.2"
         const val espresso = "androidx.test.espresso:espresso-core:3.3.0"
     }
@@ -73,5 +70,6 @@ object Dependencies {
         const val coil = "io.coil-kt:coil-compose:2.3.0"
         const val coilGif = "io.coil-kt:coil-gif:2.2.2"
         const val staggeredManager = "androidx.compose.foundation:foundation:1.3.0"
+        const val foundation = "androidx.compose.foundation:foundation:1.3.1"
     }
 }
