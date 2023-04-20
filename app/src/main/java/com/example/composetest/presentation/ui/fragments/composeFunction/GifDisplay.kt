@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.*
 import coil.*
 import coil.compose.*
 import coil.decode.*
+import coil.request.CachePolicy
 
 @Composable
 fun GifDisplay(image: String, modifier: Modifier = Modifier) {
@@ -20,10 +21,12 @@ fun GifDisplay(image: String, modifier: Modifier = Modifier) {
                 add(GifDecoder.Factory())
             }
         }
+        .respectCacheHeaders(false)
         .build()
 
+    val painter = rememberAsyncImagePainter(image, imageLoader)
     Image(
-        painter = rememberAsyncImagePainter(image, imageLoader),
+        painter = painter,
         contentDescription = null,
         contentScale = ContentScale.Crop,
         modifier = modifier

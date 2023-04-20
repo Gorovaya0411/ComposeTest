@@ -7,8 +7,8 @@ import com.example.composetest.domain.entities.rest.*
 class LoadListImageUseCase(
     private val listImageRepo: ListImagesRepository
 ) {
-    suspend fun getListImage(): Result<ListImageResponse> =
+    suspend fun getImages(): Result<List<ImageResponse>> =
         resultOf {
-            listImageRepo.getListImage()
+            listImageRepo.getListImage().data
         }
 }

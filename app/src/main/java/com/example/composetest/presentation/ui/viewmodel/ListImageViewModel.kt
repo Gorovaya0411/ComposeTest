@@ -1,33 +1,38 @@
 package com.example.composetest.presentation.ui.viewmodel
 
-import android.util.*
-import androidx.compose.runtime.*
-import androidx.lifecycle.*
-import com.example.composetest.domain.entities.rest.*
+import android.content.Context
+import androidx.compose.runtime.mutableStateOf
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.composetest.common.App
+import com.example.composetest.domain.entities.rest.ImageResponse
 import com.example.composetest.domain.usecase.LoadListImageUseCase
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ListImageViewModel(
-    private val loadListImageUseCase: LoadListImageUseCase
-) : ViewModel() {
+class ListImageViewModel : ViewModel() {
 
-    var listImage = mutableStateOf<List<ImageResponse>>(listOf())
-    private val _listImage = mutableListOf<ImageResponse>()
+    @Inject
+    lateinit var loadListImageUseCase: LoadListImageUseCase
 
-    fun getAllImage() {
-        loadListImageUseCase.apply {
-            viewModelScope.launch(Dispatchers.IO) {
-                loadListImageUseCase.getListImage()
-                    .onSuccess { listImageResponse ->
-                        listImageResponse.data.forEach {
-                            _listImage.add(it)
-                        }
-                        listImage.value = _listImage
-                    }
-                    .onFailure {
-                        Log.e("mistake:", it.toString())
-                    }
-            }
+    private val _state = mutableStateOf<List<ImageResponse>>(listOf())
+    val state = _state
+
+    //TODO: так не правильно, надо делать через inject или еще как-то
+    fun initialize(fragment: Fragment) {
+
+        (fragment.activity?.application as App).listImagesComponent.inject(this)
+
+        viewModelScope.launch(Dispatchers.IO) {
+            loadListImageUseCase.getImages()
+                .onSuccess { images ->
+                    _state.value = images
+                }
+                .onFailure {
+                    state.value = emptyList()
+                }
         }
     }
 }
