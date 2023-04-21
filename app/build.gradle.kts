@@ -117,4 +117,5 @@ dependencies {
     implementation(Dependencies.Compose.coil)
     implementation(Dependencies.Compose.coilGif)
     implementation(Dependencies.Compose.staggeredManager)
+    implementation(Dependencies.Compose.swipe)
 }

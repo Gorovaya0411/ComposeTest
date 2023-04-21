@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GradleKotlinTest</string>
+
+    <string name="list_is_empty">Список пустой</string>
+    <string name="is_no_internet">Нет интернета</string>
+    <string name="invalid_gif_link">Не верная ссылка на gif :)</string>
 </resources>

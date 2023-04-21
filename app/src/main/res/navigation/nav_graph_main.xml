@@ -2,10 +2,10 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph_main.xml"
-    app:startDestination="@id/fragmentPlaylist">
+    app:startDestination="@id/fragmentImageList">
 
     <fragment
-        android:id="@+id/fragmentPlaylist"
-        android:name="com.example.composetest.presentation.ui.fragments.FragmentImageList"
-        android:label="FragmentPlaylist" />
+        android:id="@+id/fragmentImageList"
+        android:name="com.example.composetest.presentation.ui.fragments.imageList.FragmentImageList"
+        android:label="fragmentImageList" />
 </navigation>

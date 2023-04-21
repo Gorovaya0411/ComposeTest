@@ -4,13 +4,15 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import androidx.compose.ui.res.*
 import androidx.compose.ui.unit.*
-import com.example.composetest.presentation.ui.viewmodel.*
+import com.example.composetest.R
+import com.example.composetest.presentation.ui.fragments.imageList.*
 
 @Composable
-fun ImagePage(id: String, viewModel: ListImageViewModel) {
+fun ImagePage(id: String, viewModel: ImageListViewModel) {
     val item = viewModel.state.value.firstOrNull { it.id == id }
-    if(item != null) {
+    if (item != null) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -25,7 +27,6 @@ fun ImagePage(id: String, viewModel: ListImageViewModel) {
             Text(text = item.slug, fontSize = 14.sp)
         }
     } else {
-        Text(text = "Не верная ссылка на gif :)", fontSize = 14.sp)
-
+        Text(text = stringResource(id = R.string.invalid_gif_link), fontSize = 14.sp)
     }
 }

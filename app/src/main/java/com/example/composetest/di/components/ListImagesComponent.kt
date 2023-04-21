@@ -1,8 +1,8 @@
 package com.example.composetest.di.components
 
 import com.example.composetest.di.modules.*
-import com.example.composetest.presentation.ui.fragments.*
-import com.example.composetest.presentation.ui.viewmodel.ListImageViewModel
+import com.example.composetest.presentation.ui.fragments.imageList.*
+import com.example.composetest.presentation.ui.fragments.imageList.ImageListViewModel
 import dagger.Component
 import javax.inject.Singleton
 
@@ -11,6 +11,5 @@ import javax.inject.Singleton
 interface ListImagesComponent {
     fun inject(fragment: FragmentImageList)
 
-    fun inject(viewModel: ListImageViewModel)
-
+    fun inject(viewModel: ImageListViewModel)
 }

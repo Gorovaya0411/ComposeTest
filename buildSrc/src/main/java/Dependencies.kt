@@ -61,9 +61,9 @@ object Dependencies {
     }
 
     object Compose {
-        const val compose = "androidx.compose.ui:ui:1.2.0"
+        const val compose = "androidx.compose.ui:ui:1.3.0"
         const val preview = "androidx.compose.ui:ui-tooling-preview:1.2.0"
-        const val material = "androidx.compose.material:material:1.2.0"
+        const val material = "androidx.compose.material:material:1.3.0"
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
         const val runtime = "androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha03"
         const val navigation = "androidx.navigation:navigation-compose:2.5.3"
@@ -71,5 +71,6 @@ object Dependencies {
         const val coilGif = "io.coil-kt:coil-gif:2.2.2"
         const val staggeredManager = "androidx.compose.foundation:foundation:1.3.0"
         const val foundation = "androidx.compose.foundation:foundation:1.3.1"
+        const val swipe = "com.google.accompanist:accompanist-swiperefresh:0.10.0"
     }
 }
